@@ -56,7 +56,7 @@ Inicializamos um novo projeto com o Poetry dentro da pasta:
 
 `poetry init`
 
-Instalamos as bibliotecas do PySpark, Delta Lake e Jupyter Lab por meio do Poetry:
+Instalamos as bibliotecas do PySpark, Delta Lake e Jupyter Lab por meio do Poetry. É importante atentar-se a [compatibilidade de versões](https://docs.delta.io/latest/releases.html#compatibility-with-apache-spark) entre o Spark e o Delta:
 
 `poetry add pyspark==3.4.2 delta-spark==2.4.0 jupyterlab`
 
@@ -66,7 +66,7 @@ Entramos no ambiente virtual criado pelo Poetry:
 
 ![ambiente-virtual-poetry](https://github.com/user-attachments/assets/7113e601-f423-42ab-972b-cc570607eec6)
 
-Abrimos o Jupyter Lab
+Abrimos o Jupyter Lab (também é possível rodar o projeto pelo VS Code):
 
 `jupyter-lab`
 
