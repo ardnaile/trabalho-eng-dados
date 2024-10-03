@@ -252,10 +252,19 @@ Inicializamos um novo projeto com o Poetry:
 
 Instalamos as bibliotecas do PySpark,Iceberg e Jupyter Lab por meio do Poetry:
 
-`poetry add pyspark iceberg jupyterlab`
+`poetry add pyspark jupyterlab`
 
-Para verificarmos as versôes:
+Baixar o arquivo do Iceberg:
 
+`wget https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark3-runtime/1.3.0/iceberg-spark3-runtime-1.3.0.jar`
+
+Para verificarmos as versôes do pyspark e python do projeto podemos acessar o arquivo pyProject.poml:
+
+`nano pyproject.poml`
+
+Para verificarmos versão do jupyter:
+
+`jupyter --version`
 
 Entramos no ambiente virtual criado pelo Poetry:
 
