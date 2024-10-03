@@ -20,7 +20,7 @@ Abaixo está o passo a passo de como foi implementado o Delta Lake.
 
 ### 1. Configuração do ambiente
 
-Para este projeto, foi utilizada uma máquina virtual Linux, já com o Docker e o GIT instalados. Antes de iniciar o projeto, setamos o username e email do GIT globalmente para criação do projeto pelo Poetry posteriormente:
+Para este projeto, foi utilizada uma máquina virtual Linux, já com o GIT instalado. Antes de iniciar o projeto, foram setados o user.name e user.email do GIT globalmente para criação do projeto pelo Poetry posteriormente:
 
 `git config --global user.name "exemplo123"`
 
@@ -44,7 +44,15 @@ Conferimos se a instalação foi bem sucedida:
 
 ### 2. Criação do projeto pelo Poetry
 
-Inicializamos um novo projeto com o Poetry: 
+Criamos uma pasta para o projeto:
+
+`mkdir <nome_da_pasta>`
+
+Acessamos a pasta:
+
+`cd <nome_da_pasta>`
+
+Inicializamos um novo projeto com o Poetry dentro da pasta: 
 
 `poetry init`
 
@@ -208,15 +216,17 @@ deltaTable.toDF().show()
 
 # Apache Iceberg
 
+Abaixo está o passo a passo de como foi implementado o Apache Iceberg.
+
 ### 1. Configuração do ambiente
 
-Para este projeto, foi utilizada uma máquina virtual Linux, instalado Git. Antes de iniciar o projeto, setamos o username e email do GIT globalmente para criação do projeto pelo Poetry posteriormente:
+Para este projeto, foi utilizada uma máquina virtual Linux, já com o GIT instalado. Antes de iniciar o projeto, setamos o user.name e o user.email do GIT globalmente para criação do projeto pelo Poetry posteriormente:
 
 `git config --global user.name "exemplo123"`
 
 `git config --global user.email "exemplo123@exemplo.com"`
 
-Instalamos o Python, pip e o Poetry, que é um gerenciador de dependências e ferramenta de empacotamento para projetos Python. A instalação foi feita rodando os seguintes comandos:
+Instalamos o Python e o Poetry, que é um gerenciador de dependências e ferramenta de empacotamento para projetos Python. A instalação foi feita rodando os seguintes comandos:
 
 Primeiro, como boa prática, atualizamos o gerenciador de pacotes do Linux:
 
@@ -226,17 +236,13 @@ Instalamos o Python e o Poetry:
 
 `apt-get install -y python3 python3-poetry`
 
-`apt install python3-pip`
-
 Conferimos se a instalação foi bem sucedida: 
 
 `python3 —version` 
 
-`pip --version`
-
 `poetry --version`
 
-### 2. Criação do projeto pelo Poetry
+### 2. Criação do proj eto pelo Poetry
 
 Criamos uma pasta para o projeto:
 
@@ -250,7 +256,7 @@ Inicializamos um novo projeto com o Poetry:
 
 `poetry init`
 
-Instalamos as bibliotecas do PySpark,Iceberg e Jupyter Lab por meio do Poetry:
+Instalamos as bibliotecas do PySpark, Iceberg e Jupyter Lab por meio do Poetry:
 
 `poetry add pyspark jupyterlab`
 
@@ -258,11 +264,11 @@ Baixar o arquivo do Iceberg:
 
 `wget https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark3-runtime/1.3.0/iceberg-spark3-runtime-1.3.0.jar`
 
-Para verificarmos as versôes do pyspark e python do projeto podemos acessar o arquivo pyProject.poml:
+Para verificarmos as versões do PySpark e Python do projeto podemos acessar o arquivo pyProject.poml:
 
 `nano pyproject.poml`
 
-Para verificarmos versão do jupyter:
+Para verificarmos versão do Jupyter:
 
 `jupyter --version`
 
