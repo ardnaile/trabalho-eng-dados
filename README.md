@@ -254,6 +254,9 @@ Instalamos as bibliotecas do PySpark,Iceberg e Jupyter Lab por meio do Poetry:
 
 `poetry add pyspark iceberg jupyterlab`
 
+Para verificarmos as versôes:
+
+
 Entramos no ambiente virtual criado pelo Poetry:
 
 `poetry shell`
@@ -268,5 +271,78 @@ Após rodar o comando `jupyter-lab`, o Jupyter Lab abre no navegador. Criamos um
 
 Importamos SparkSession e alguns tipos de dados que serão utilizados, e também o Delta:
 
+
 ```
 # Imports
+
+import os
+from pyspark.sql import SparkSession
+```
+
+Criamos a Spark Session:
+
+```
+
+iceberg_jar_path = os.path.join(os.getcwd(), "<caminho/ate/pasta/jar/do/iceberg>/
+
+spark = SparkSession.builder \
+    .appName("IcebergApp") \
+    .config("spark.jars", iceberg_jar_path) \
+    .config("spark.sql.extensions", "org.apache.iceberg.spark.extensions.IcebergSparkSessionExtensions") \
+    .config("spark.sql.catalog.my_catalog", "org.apache.iceberg.spark.SparkCatalog") \
+    .config("spark.sql.catalog.my_catalog.type", "in-memory") \
+    .getOrCreate()
+```
+
+### 4. Criando a tabela e manipulando a mesma
+
+Criação da Tabela
+
+```
+spark.sql("""
+CREATE TABLE my_catalog.default.my_table (
+    id INT,
+    name STRING,
+    cpf STRING,
+    created_at TIMESTAMP
+) 
+USING iceberg
+""")
+```
+
+Simulamos a inserção de dados:
+
+```
+spark.sql("""
+INSERT INTO my_catalog.default.my_table VALUES
+    (1, 'Ana','11526558950', current_timestamp()),
+    (2, 'Paulo,'11520939914', current_timestamp())
+""")
+```
+
+Consulta:
+
+```
+result = spark.sql("SELECT * FROM my_catalog.default.my_table")
+result.show()
+```
+
+Update: 
+
+```
+spark.sql("""
+UPDATE my_catalog.default.my_table
+SET cpf = '54689578510'
+WHERE id = 1
+""")
+```
+
+Delete: 
+
+```
+spark.sql("""
+DELETE FROM my_catalog.default.my_table
+WHERE id = 2
+""")
+```
+
