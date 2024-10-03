@@ -208,4 +208,65 @@ deltaTable.toDF().show()
 
 # Apache Iceberg
 
-Implementação do Apache Iceberg em breve.
+### 1. Configuração do ambiente
+
+Para este projeto, foi utilizada uma máquina virtual Linux, instalado Git. Antes de iniciar o projeto, setamos o username e email do GIT globalmente para criação do projeto pelo Poetry posteriormente:
+
+`git config --global user.name "exemplo123"`
+
+`git config --global user.email "exemplo123@exemplo.com"`
+
+Instalamos o Python, pip e o Poetry, que é um gerenciador de dependências e ferramenta de empacotamento para projetos Python. A instalação foi feita rodando os seguintes comandos:
+
+Primeiro, como boa prática, atualizamos o gerenciador de pacotes do Linux:
+
+`apt-get update` 
+
+Instalamos o Python e o Poetry:
+
+`apt-get install -y python3 python3-poetry`
+
+`apt install python3-pip`
+
+Conferimos se a instalação foi bem sucedida: 
+
+`python3 —version` 
+
+`pip --version`
+
+`poetry --version`
+
+### 2. Criação do projeto pelo Poetry
+
+Criamos uma pasta para o projeto:
+
+`mkdir <nome_da_pasta>`
+
+Acessamos a pasta:
+
+`cd <nome_da_pasta>`
+
+Inicializamos um novo projeto com o Poetry: 
+
+`poetry init`
+
+Instalamos as bibliotecas do PySpark,Iceberg e Jupyter Lab por meio do Poetry:
+
+`poetry add pyspark iceberg jupyterlab`
+
+Entramos no ambiente virtual criado pelo Poetry:
+
+`poetry shell`
+
+Abrimos o Jupyter Lab
+
+`jupyter-lab`
+
+### 3. Configuração do projeto e prepraração dos dados no Jupyter Lab
+
+Após rodar o comando `jupyter-lab`, o Jupyter Lab abre no navegador. Criamos um notebook chamado "iceberg" onde vamos trabalhar o código em si.
+
+Importamos SparkSession e alguns tipos de dados que serão utilizados, e também o Delta:
+
+```
+# Imports
