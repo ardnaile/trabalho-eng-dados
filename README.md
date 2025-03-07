@@ -11,9 +11,9 @@ Além dos conhecimentos adquiridos em sala de aula, também foram utilizados com
 
 # Delta Lake
 
-Por [Eliandra Cardoso](https://github.com/ardnaile)
-
 Abaixo está o passo a passo de como foi implementado o Delta Lake.
+
+Por [Eliandra Cardoso](https://github.com/ardnaile)
 
 ### 1. Configuração do ambiente
 
@@ -213,9 +213,9 @@ deltaTable.toDF().show()
 
 # Apache Iceberg
 
-Por [Paulo Cesar Dal Ponte](https://github.com/pauloDalponte)
-
 Abaixo está o passo a passo de como foi implementado o Apache Iceberg.
+
+Por [Paulo Cesar Dal Ponte](https://github.com/pauloDalponte)
 
 ### 1. Configuração do ambiente
 
