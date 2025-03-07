@@ -241,7 +241,7 @@ Conferimos se a instalação foi bem sucedida:
 
 `poetry --version`
 
-### 2. Criação do proj eto pelo Poetry
+### 2. Criação do projeto pelo Poetry
 
 Criamos uma pasta para o projeto:
 
