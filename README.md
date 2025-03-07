@@ -1,11 +1,6 @@
 # Trabalho de Engenharia de Dados
 Implementação de Apache Spark com Delta Lake e Apache Iceberg.
 
-### Integrantes
-
-- [Eliandra Cardoso](https://github.com/ardnaile)
-- [Paulo Cesar Dal Ponte](https://github.com/pauloDalponte)
-
 ### Objetivo
 
 Compreender o uso do Delta Lake e do Apache Iceberg ao manipular dados dentro do Jupyter Lab com o PySpark, com comandos de INSERT, UPDATE e DELETE.
@@ -15,6 +10,8 @@ Compreender o uso do Delta Lake e do Apache Iceberg ao manipular dados dentro do
 Além dos conhecimentos adquiridos em sala de aula, também foram utilizados como referência para o projeto a aula [Como Sair do Zero no Delta Lake e PySpark](https://youtu.be/eOrWEsZIfKU) da DataWay BR e o [artigo](https://datawaybr.medium.com/como-sair-do-zero-no-delta-lake-em-apenas-uma-aula-d152688a4cc8) referente a esta aula.
 
 # Delta Lake
+
+Por [Eliandra Cardoso](https://github.com/ardnaile)
 
 Abaixo está o passo a passo de como foi implementado o Delta Lake.
 
@@ -215,6 +212,8 @@ deltaTable.toDF().show()
 ```
 
 # Apache Iceberg
+
+Por [Paulo Cesar Dal Ponte](https://github.com/pauloDalponte)
 
 Abaixo está o passo a passo de como foi implementado o Apache Iceberg.
 
